@@ -7,16 +7,16 @@ using System.Web.Mvc;
 
 namespace OdeToFood.Controllers
 {
-    [Log]
     public class CuisineController : Controller
     {
         //
         // GET: /Cuisine/
-        [Authorize]
-        public ActionResult Search(string name)
+        // [Authorize]
+        public ActionResult Search(string name = "french")
         {
+
             var message = Server.HtmlEncode(name);
-            return Content(name);
+            return Content(message);
            // return RedirectToAction("Index", "Home", new { name = name });
         }
 
